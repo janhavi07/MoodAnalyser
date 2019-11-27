@@ -37,7 +37,6 @@ public class MoodAnalyserTest {
         }
 
     }
-
     @Test
     public void givenMessage_HasNoMessage_Return_Happy() {
         try{
@@ -49,4 +48,12 @@ public class MoodAnalyserTest {
         }
 
     }
+
+    @Test
+    public void givenMoodAnalyserClass_WhenProper_Returns_Object() throws MoodAnalysisExceptions {
+       MoodAnalyser moodAnalyser=MoodAnalyserFactory.createMoodAnalyser("I am in Happy mood");
+       Assert.assertEquals(new MoodAnalyser("I am in Happy mood"),moodAnalyser);
+    }
+
+
 }

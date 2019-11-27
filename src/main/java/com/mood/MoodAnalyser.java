@@ -24,6 +24,12 @@ public class MoodAnalyser {
                     "Null value passed");
         }
     }
+    public boolean equals(Object other){
+        if(this.message.equals(((MoodAnalyser) other).message))
+            return true;
+        return false;
+    }
+
 
 }
 
