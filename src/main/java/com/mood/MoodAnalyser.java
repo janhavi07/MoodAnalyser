@@ -10,14 +10,15 @@ public class MoodAnalyser {
         this.message=message;
     }
 
-    public String analyseMood() {
+    public String analyseMood() throws MoodAnalysisExceptions {
         try {
             if (message.contains("Sad"))
                 return "SAD";
             else
                 return "HAPPY";
         } catch (NullPointerException e){
-        return "HAPPY";}
+            throw new MoodAnalysisExceptions(MoodAnalysisExceptions.ExceptionType.NULL_POINTER_EXCEPTION, "Null value passed");
+        }
     }
 
 }
