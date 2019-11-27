@@ -73,6 +73,12 @@ public class MoodAnalyserTest {
     }
 
     @Test
-    public void name() {
+    public void givenHappyMessage_WithReflection_ShouldReturn_Happy(){
+        try{
+            Object myObject=MoodAnalyserFactory.createMoodAnalyser("I am in Happy Mood");
+            Object mood=MoodAnalyserFactory.invokeMethod(myObject,"analyseMood");
+        } catch (MoodAnalysisExceptions moodAnalysisExceptions) {
+            moodAnalysisExceptions.printStackTrace();
+        }
     }
 }

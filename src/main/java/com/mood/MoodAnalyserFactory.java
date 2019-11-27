@@ -26,4 +26,8 @@ public class MoodAnalyserFactory {
     return null;
     }
 
+    public static Object invokeMethod(Object object,String methodName) {
+        return null;
+
+    }
 }
