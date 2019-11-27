@@ -44,9 +44,7 @@ public class MoodAnalyserTest {
             String mood= mood = analyser.analyseMood();
             Assert.assertEquals("HAPPY",mood);
         }catch (MoodAnalysisExceptions moodAnalysisExceptions) {
-            moodAnalysisExceptions.printStackTrace();
-        }
-
+            moodAnalysisExceptions.printStackTrace(); }
     }
 
     @Test
@@ -72,5 +70,9 @@ public class MoodAnalyserTest {
         }catch(MoodAnalysisExceptions e){
             Assert.assertEquals(MoodAnalysisExceptions.ExceptionType.NO_SUCH_METHOD,e.type);
         }
+    }
+
+    @Test
+    public void name() {
     }
 }
