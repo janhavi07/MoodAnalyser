@@ -104,4 +104,25 @@ public class MoodAnalyserTest {
             moodAnalysisExceptions.printStackTrace();
         }
     }
+
+    @Test
+    public void fieldWhenImproper_Should_ThrowException() {
+        try{
+            Object myObject=MoodAnalyserFactory.createMoodAnalyser("I am in Happy Mood");
+            MoodAnalyserFactory.setFieldValues(myObject,"messag","I am in Happy Mood");
+        } catch (MoodAnalysisExceptions moodAnalysisExceptions) {
+            Assert.assertEquals(MoodAnalysisExceptions.ExceptionType.NO_SUCH_FIELD,moodAnalysisExceptions.type);
+            //moodAnalysisExceptions.printStackTrace();
+        }
+    }
+    @Test
+    public void fieldValueWhenImproper_Should_ThrowException() {
+        try{
+            Object myObject=MoodAnalyserFactory.createMoodAnalyser("I am in Happy Mood");
+            MoodAnalyserFactory.setFieldValues(myObject,"message","I am in");
+        } catch (MoodAnalysisExceptions moodAnalysisExceptions) {
+            Assert.assertEquals(MoodAnalysisExceptions.ExceptionType.FIELD_SETTING_ISSUE,moodAnalysisExceptions.type);
+            //moodAnalysisExceptions.printStackTrace();
+        }
+    }
 }

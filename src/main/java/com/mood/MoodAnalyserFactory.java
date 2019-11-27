@@ -48,7 +48,7 @@ public class MoodAnalyserFactory {
            throw new MoodAnalysisExceptions(MoodAnalysisExceptions.ExceptionType.FIELD_SETTING_ISSUE,
                    "Improper fields");
         } catch (NoSuchFieldException e) {
-            throw new MoodAnalysisExceptions(MoodAnalysisExceptions.ExceptionType.NO_SUCH_METHOD,
+            throw new MoodAnalysisExceptions(MoodAnalysisExceptions.ExceptionType.NO_SUCH_FIELD,
                     "Improper field Name");
         }
     }
