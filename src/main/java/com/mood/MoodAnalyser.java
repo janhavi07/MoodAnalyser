@@ -12,12 +12,16 @@ public class MoodAnalyser {
 
     public String analyseMood() throws MoodAnalysisExceptions {
         try {
-            if (message.contains("Sad"))
+            if(message.length()==0)
+                throw new MoodAnalysisExceptions(MoodAnalysisExceptions.ExceptionType.EMPTY_MESSAGE,
+                        "Empty mood");
+            else if (message.contains("Sad"))
                 return "SAD";
             else
                 return "HAPPY";
         } catch (NullPointerException e){
-            throw new MoodAnalysisExceptions(MoodAnalysisExceptions.ExceptionType.NULL_POINTER_EXCEPTION, "Null value passed");
+            throw new MoodAnalysisExceptions(MoodAnalysisExceptions.ExceptionType.NULL_POINTER_EXCEPTION,
+                    "Null value passed");
         }
     }
 

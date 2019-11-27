@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mood.MoodAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-27T07:39:49" hostname="admin293-H110M-H" time="0.013">
+<testsuite name="com.mood.MoodAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-27T07:56:31" hostname="admin293-H110M-H" time="0.008">
   <properties/>
-  <testcase name="givenMessage_WhenNull_ShouldReturnHappy" classname="com.mood.MoodAnalyserTest" time="0.013"/>
+  <testcase name="givenMessage_HasNoMessage_Return_Happy" classname="com.mood.MoodAnalyserTest" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[com.mood.MoodAnalysisExceptions: Null value passed
-	at com.mood.MoodAnalyser.analyseMood(MoodAnalyser.java:20)
-	at com.mood.MoodAnalyserTest.givenMessage_WhenNull_ShouldReturnHappy(MoodAnalyserTest.java:33)
+  <system-err><![CDATA[com.mood.MoodAnalysisExceptions: Empty message
+	at com.mood.MoodAnalyser.analyseMood(MoodAnalyser.java:16)
+	at com.mood.MoodAnalyserTest.givenMessage_HasNoMessage_Return_Happy(MoodAnalyserTest.java:45)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

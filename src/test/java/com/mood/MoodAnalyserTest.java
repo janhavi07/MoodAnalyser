@@ -37,4 +37,16 @@ public class MoodAnalyserTest {
         }
 
     }
+
+    @Test
+    public void givenMessage_HasNoMessage_Return_Happy() {
+        try{
+            MoodAnalyser analyser=new MoodAnalyser("");
+            String mood= mood = analyser.analyseMood();
+            Assert.assertEquals("HAPPY",mood);
+        }catch (MoodAnalysisExceptions moodAnalysisExceptions) {
+            moodAnalysisExceptions.printStackTrace();
+        }
+
+    }
 }
