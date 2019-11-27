@@ -92,4 +92,16 @@ public class MoodAnalyserTest {
             Assert.assertEquals(MoodAnalysisExceptions.ExceptionType.NO_SUCH_METHOD,moodAnalysisExceptions.type);
         }
     }
+
+    @Test
+    public void givenMessageHappy_ShouldReturn_Happy() {
+        try{
+            Object myObject=MoodAnalyserFactory.createMoodAnalyser("I am in Happy Mood");
+            MoodAnalyserFactory.setFieldValues(myObject,"message","I am in Happy Mood");
+            Object mood=MoodAnalyserFactory.invokeMethod(myObject,"analyseMood");
+            Assert.assertEquals("HAPPY",mood);
+        } catch (MoodAnalysisExceptions moodAnalysisExceptions) {
+            moodAnalysisExceptions.printStackTrace();
+        }
+    }
 }

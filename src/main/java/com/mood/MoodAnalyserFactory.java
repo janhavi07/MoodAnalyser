@@ -1,6 +1,7 @@
 package com.mood;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
 public class MoodAnalyserFactory {
@@ -38,5 +39,21 @@ public class MoodAnalyserFactory {
         }
     }
 
+    public static void setFieldValues(Object myObject,String fieldName,String fieldValues) throws MoodAnalysisExceptions {
+        try{
+            Field field=myObject.getClass().getDeclaredField(fieldName);
+            field.setAccessible(true);
+            field.set(myObject,fieldValues);
+        } catch (IllegalAccessException e) {
+           throw new MoodAnalysisExceptions(MoodAnalysisExceptions.ExceptionType.FIELD_SETTING_ISSUE,
+                   "Improper fields");
+        } catch (NoSuchFieldException e) {
+            throw new MoodAnalysisExceptions(MoodAnalysisExceptions.ExceptionType.NO_SUCH_METHOD,
+                    "Improper field Name");
+        }
     }
+
+
+    }
+
 
